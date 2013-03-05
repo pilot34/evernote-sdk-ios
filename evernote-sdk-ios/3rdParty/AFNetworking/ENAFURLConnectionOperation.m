@@ -46,7 +46,7 @@ typedef UIBackgroundTaskIdentifier AFBackgroundTaskIdentifier;
 typedef id AFBackgroundTaskIdentifier;
 #endif
 
-static NSString * const kAFNetworkingLockName = @"com.alamofire.networking.operation.lock";
+static NSString * const kENAFNetworkingLockName = @"com.alamofire.networking.operation.lock";
 
 NSString * const ENAFNetworkingErrorDomain = @"AFNetworkingErrorDomain";
 NSString * const ENAFNetworkingOperationFailingURLRequestErrorKey = @"AFNetworkingOperationFailingURLRequestErrorKey";
@@ -178,7 +178,7 @@ static inline BOOL AFStateTransitionIsValid(AFOperationState fromState, AFOperat
     }
     
     self.lock = [[NSRecursiveLock alloc] init];
-    self.lock.name = kAFNetworkingLockName;
+    self.lock.name = kENAFNetworkingLockName;
     
     self.runLoopModes = [NSSet setWithObject:NSRunLoopCommonModes];
     
